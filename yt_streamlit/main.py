@@ -7,9 +7,6 @@
 # https://github.com/wjbmattingly/youtube-shakespeare
     # tab 기능
 # %%
-# sys.path.append('/home/aift-ml/workspace/home/aift-ml/workspace/JinWon/NER/119NER_model_develop_v3_evalutation/ner_api_init')
-# https://github.com/tvst/st-annotated-text
-# https://www.youtube.com/watch?v=ipVnSCWFgis
 import os, sys
 from dotenv import load_dotenv
 load_dotenv('./../../ChatGPT/.env')
