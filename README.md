@@ -1,3 +1,6 @@
 # vanilla_chain_chatgpt
 
-# 큰그림 (뼈대)
+- project 멤버
+- 김진원
+- 김일구
+- 한승우
