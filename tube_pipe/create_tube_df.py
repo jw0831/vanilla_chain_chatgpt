@@ -32,15 +32,17 @@ def main(channel_url):
     channel_name = channel_url.split("/")[-1]
     basic_data_path = "/root/project/tube_project/data"
     video_down_path = os.path.join(basic_data_path, channel_name)
+    if not os.path.exists(video_down_path):
+        os.mkdir(video_down_path)
 
     video_list = get_video_list_from_channel(channel_url=channel_url)
     video_dict = get_essential_data_dict(video_list)
     video_df = pd.DataFrame(video_dict)
-
+    video_df.to_pickle(video_down_path + "/metadata_df.pickle")
 
     ydl_opts = {
     'format': 'mp3/bestaudio/best',
-    "outtmpl": video_down_path+"%(id)s",
+    "outtmpl": video_down_path+"/%(id)s",
     # ℹ️ See help(yt_dlp.postprocessor) for a list of available Postprocessors and their arguments
     'postprocessors': [{  # Extract audio using ffmpeg
         'key': 'FFmpegExtractAudio',
@@ -53,6 +55,5 @@ def main(channel_url):
 
 if __name__ == "__main__":
     #channel url은 @가 붙은 url
-    channel_url = "https://www.youtube.com/@moneyinside7"
-
+    channel_url = "https://www.youtube.com/@themikeblack"
     main(channel_url=channel_url)
