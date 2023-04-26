@@ -1,0 +1,14 @@
+lxml
+langchain
+chromadb
+google-search-results
+tiktoken
+openai
+faiss-cpu
+python-dotenv
+openpyxl
+pandas
+numpy
+ipykernel
+JPype1
+pypdf
